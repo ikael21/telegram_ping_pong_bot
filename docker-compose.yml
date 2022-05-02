@@ -1,32 +1,13 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  # Bot container
   bot:
     container_name: telegram-bot
     build: .
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/home/telegram-bot
     ports:
-      - "8080:8080" # might change if needed
-    networks:
-      - bot-db
+      - "8080:8080"
     restart: always
-    depends_on:
-     - db
-   # add volume
-
-  # SQLite3 container
-  db:
-    container_name: sqlite3
-    image: keinos/sqlite3:3.38.2
-    networks:
-      - bot-db
-    restart: always
-    # add volume
-
-# don't figure out this yet
-# volumes:
-
-
-networks:
-  bot-db:
-    driver: bridge
