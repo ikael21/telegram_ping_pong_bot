@@ -1,8 +1,8 @@
 require 'telegram/bot'
 
-token = ''
+TOKEN = ENV['BOT_TOKEN']
 
-Telegram::Bot::Client.run(token) do |bot|
+Telegram::Bot::Client.run(TOKEN) do |bot|
   bot.listen do |message|
     case message.text
     when '/start'
