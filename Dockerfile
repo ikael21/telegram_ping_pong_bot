@@ -34,6 +34,4 @@ COPY Gemfile ./
 
 RUN bundle install
 
-EXPOSE 8080
-
 CMD ruby main.rb
