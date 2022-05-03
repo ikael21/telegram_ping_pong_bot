@@ -6,6 +6,8 @@ services:
     build: .
     stdin_open: true
     tty: true
+    environment:
+      RUBYOPT: -W:no-deprecated -W:no-experimental
     volumes:
       - .:/home/telegram-bot
     restart: always
