@@ -34,4 +34,4 @@ COPY Gemfile ./
 
 RUN bundle install
 
-CMD ruby main.rb
+CMD ruby app/main.rb
