@@ -1,0 +1,2 @@
+class SoloFemaleTournament < Tournament
+end

@@ -1,0 +1,2 @@
+class MixedTournament < Tournament
+end

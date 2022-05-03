@@ -1,0 +1,2 @@
+class DuoFemaleTournament < Tournament
+end

@@ -1,0 +1,2 @@
+class SoloMaleTournament < Tournament
+end
