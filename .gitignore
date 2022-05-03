@@ -53,3 +53,6 @@ build-iPhoneSimulator/
 .rvmrc
 
 bot_token.rb
+
+# ignore sqlite3 files
+db/*.sqlite3
