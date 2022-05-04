@@ -2,10 +2,10 @@ FROM ruby:2.7.1-alpine
 
 ARG APP_DIRECTORY=/home/telegram-bot
 ARG PACKAGES="bash vim \
-            alpine-sdk build-base \
-            tcl-dev tk-dev \
-            mesa-dev jpeg-dev \
-            libjpeg-turbo-dev"
+              alpine-sdk build-base \
+              tcl-dev tk-dev \
+              mesa-dev jpeg-dev \
+              libjpeg-turbo-dev"
 
 RUN apk update && \
     apk upgrade && \
