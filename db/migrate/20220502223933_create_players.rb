@@ -4,7 +4,6 @@ class CreatePlayers < ActiveRecord::Migration[5.2]
       t.string :first_name, null: false
       t.string :last_name, null: false
       t.string :nickname, null: false
-
       t.timestamps
     end
   end
