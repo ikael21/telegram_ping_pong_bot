@@ -1,21 +1,38 @@
-require_relative '../app/models/tournament'
-require_relative '../app/models/solo_male_tournament'
-require_relative '../app/models/solo_female_tournament'
-require_relative '../app/models/duo_male_tournament'
-require_relative '../app/models/duo_female_tournament'
-require_relative '../app/models/mixed_tournament'
+require_relative '../app/model_requirements'
 
-
-NAMES = %w(
-  Elnora Bautista
-  Clair Bradford
-  Elma Long
+TOURNAMENTS_SEEDS = %w(
+  Almighty_Tennis
+  OnlyBoys
+  OnlyGirls
 )
 
-NAMES.each do |name|
-  SoloMaleTournament.create(name: name)
-  SoloFemaleTournament.create(name: name)
-  DuoMaleTournament.create(name: name)
-  DuoFemaleTournament.create(name: name)
-  MixedTournament.create(name: name)
+LEAGUES_SEEDS = %w(
+  Noobies
+  Amateurs
+  Masters
+)
+
+leagues = []
+LEAGUES_SEEDS.each do |league_name|
+  leagues << League.new(name: league_name)
+end
+
+tournaments = []
+TOURNAMENTS_SEEDS.each do |tournament_name|
+  tournament =
+    if tournament_name == 'Almighty_Tennis'
+      MixedTournament.new(name: tournament_name)
+    elsif tournament_name == 'OnlyBoys'
+      SoloMaleTournament.new(name: tournament_name)
+    else
+      SoloFemaleTournament.new(name: tournament_name)
+    end
+  tournaments << tournament
+end
+
+leagues.each do |league|
+  tournaments.each do |tournament|
+    tournament.leagues << league
+    tournament.save
+  end
 end
