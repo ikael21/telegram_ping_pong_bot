@@ -19,15 +19,11 @@ end
 
 tournaments = []
 TOURNAMENTS_SEEDS.each do |tournament_name|
-  tournament =
-    if tournament_name == 'Almighty_Tennis'
-      MixedTournament.new(name: tournament_name)
-    elsif tournament_name == 'OnlyBoys'
-      SoloMaleTournament.new(name: tournament_name)
-    else
-      SoloFemaleTournament.new(name: tournament_name)
-    end
-  tournaments << tournament
+  tournaments << Tournament.new(
+    name: tournament_name,
+    organizer: 'ikael',
+    status: :playing
+  )
 end
 
 leagues.each do |league|
