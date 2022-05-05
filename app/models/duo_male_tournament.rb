@@ -1,2 +1,0 @@
-class DuoMaleTournament < Tournament
-end
