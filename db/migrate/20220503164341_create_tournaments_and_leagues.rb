@@ -1,8 +1,9 @@
 class CreateTournamentsAndLeagues < ActiveRecord::Migration[5.2]
   def change
     create_table :tournaments do |t|
-      t.string :name
-      t.string :type
+      t.string :name, null: false
+      t.string :organizer, null: false
+      t.integer :status, null: false
       t.timestamps
     end
 
