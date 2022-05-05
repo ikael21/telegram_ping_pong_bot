@@ -56,3 +56,4 @@ bot_token.rb
 
 # ignore sqlite3 files
 db/*.sqlite3
+.idea
