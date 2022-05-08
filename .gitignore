@@ -57,3 +57,6 @@ bot_token.rb
 # ignore sqlite3 files
 db/*.sqlite3
 .idea
+
+# makefile to clean up mess after containers
+docker-clear
