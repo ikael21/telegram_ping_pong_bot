@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_05_03_164341) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "leagues", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -19,8 +22,8 @@ ActiveRecord::Schema.define(version: 2022_05_03_164341) do
   end
 
   create_table "leagues_tournaments", id: false, force: :cascade do |t|
-    t.integer "tournament_id"
-    t.integer "league_id"
+    t.bigint "tournament_id"
+    t.bigint "league_id"
     t.index ["league_id"], name: "index_leagues_tournaments_on_league_id"
     t.index ["tournament_id"], name: "index_leagues_tournaments_on_tournament_id"
   end
