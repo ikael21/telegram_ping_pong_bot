@@ -18,4 +18,4 @@ WORKDIR $APP_DIRECTORY
 COPY Gemfile Gemfile.lock  ./
 RUN bundle install --jobs 5
 
-CMD ruby app/main.rb
+CMD ruby -w app/main.rb
