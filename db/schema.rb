@@ -28,14 +28,6 @@ ActiveRecord::Schema.define(version: 2022_05_03_164341) do
     t.index ["tournament_id"], name: "index_leagues_tournaments_on_tournament_id"
   end
 
-  create_table "players", force: :cascade do |t|
-    t.string "first_name", null: false
-    t.string "last_name", null: false
-    t.string "nickname", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "teams", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -46,6 +38,15 @@ ActiveRecord::Schema.define(version: 2022_05_03_164341) do
     t.string "name", null: false
     t.string "organizer", null: false
     t.integer "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "nickname", null: false
+    t.string "type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
