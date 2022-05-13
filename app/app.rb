@@ -14,7 +14,9 @@ class App
       )
     end
 
+    # OPTIMIZE change this method
     def handle_message(bot, message)
+      p message
       case message
       when Telegram::Bot::Types::Message
         if message.text == '/start'
