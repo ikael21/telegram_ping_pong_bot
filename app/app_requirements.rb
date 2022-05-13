@@ -7,7 +7,7 @@ require 'erb'
 
 def configure_db
   db_config_file = File.join(
-    File.expand_path('..', __FILE__), '..', 'db', 'database.yml'
+    File.expand_path('..', __FILE__), '..', 'db', 'config.yml'
   )
   YAML.load(ERB.new(File.read(db_config_file)).result)
 end
