@@ -3,6 +3,8 @@ AllCops:
     - db/**/*
     - config/**/*
     - test/**/*
+    - spec/**/*
+    - Rakefile
 
 Bundler/OrderedGems:
   Enabled: false
