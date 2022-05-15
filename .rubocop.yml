@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - db/**/*
     - config/**/*
+    - test/**/*
 
 Bundler/OrderedGems:
   Enabled: false
