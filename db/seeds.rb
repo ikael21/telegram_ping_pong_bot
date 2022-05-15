@@ -1,16 +1,18 @@
-require_relative '../app/model_requirements'
+# frozen_string_literal: true
 
-TOURNAMENTS_SEEDS = %w(
+require_relative '../config/model_requirements'
+
+TOURNAMENTS_SEEDS = %w[
   Almighty_Tennis
   OnlyBoys
   OnlyGirls
-)
+].freeze
 
-LEAGUES_SEEDS = %w(
+LEAGUES_SEEDS = %w[
   Noobies
   Amateurs
   Masters
-)
+].freeze
 
 leagues = []
 LEAGUES_SEEDS.each do |league_name|
@@ -54,7 +56,7 @@ PLAYERS = [
     last_name: 'Kael',
     nickname: 'laeda'
   }
-]
+].freeze
 
 PLAYERS.each do |player|
   Player.create(
