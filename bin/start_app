@@ -1,0 +1,9 @@
+#!/usr/local/bin/ruby
+
+require_relative '../config/app_config'
+
+Telegram::Bot::Client.run(BOT_TOKEN) do |bot|
+  bot.listen do |message|
+    App.handle_message(bot, message)
+  end
+end

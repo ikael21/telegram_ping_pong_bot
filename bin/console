@@ -1,0 +1,8 @@
+#!/usr/local/bin/ruby
+
+require 'irb'
+require File.expand_path 'config/app_config.rb'
+
+ARGV.clear
+ARGV << '--simple-prompt'
+IRB.start
