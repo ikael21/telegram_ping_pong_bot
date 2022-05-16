@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative '../config/app_config'
-
 # class represents bot app
 class App
   class << self
@@ -30,11 +28,5 @@ class App
         )
       end
     end
-  end
-end
-
-Telegram::Bot::Client.run(BOT_TOKEN) do |bot|
-  bot.listen do |message|
-    App.handle_message(bot, message)
   end
 end
