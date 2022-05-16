@@ -18,4 +18,10 @@ WORKDIR $APP_DIRECTORY
 COPY Gemfile Gemfile.lock  ./
 RUN bundle install --jobs 5
 
-CMD ruby -w app/app.rb
+# add my binaries to PATH
+ENV PATH=$APP_DIRECTORY/bin:$PATH
+
+# setup default app environment
+ENV RAILS_ENV=development
+
+CMD start_app
