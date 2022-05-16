@@ -2,30 +2,27 @@
 
 require_relative '../config/model_requirements'
 
-TOURNAMENTS_SEEDS = %w[
+TOURNAMENTS = %w[
   Almighty_Tennis
   OnlyBoys
   OnlyGirls
 ].freeze
 
-LEAGUES_SEEDS = %w[
+LEAGUES = %w[
   Noobies
   Amateurs
   Masters
 ].freeze
 
 leagues = []
-LEAGUES_SEEDS.each do |league_name|
-  leagues << League.new(name: league_name)
-end
-
 tournaments = []
-TOURNAMENTS_SEEDS.each do |tournament_name|
-  tournaments << Tournament.new(
-    name: tournament_name,
-    organizer: 'ikael',
-    status: :playing
-  )
+LEAGUES.size.times do |i|
+  leagues << League.new(name: LEAGUES[i])
+  tournaments << Tournament.new do |t|
+    t.name = TOURNAMENTS[i]
+    t.organizer = 'ikael'
+    t.status = 'registration'
+  end
 end
 
 leagues.each do |league|
@@ -35,33 +32,7 @@ leagues.each do |league|
   end
 end
 
-PLAYERS = [
-  {
-    first_name: 'Anton',
-    last_name: 'Yudin',
-    nickname: 'ikael'
-  },
-  {
-    first_name: 'Ant',
-    last_name: 'Yud',
-    nickname: 'fess'
-  },
-  {
-    first_name: 'Antonio',
-    last_name: 'Vivaldi',
-    nickname: 'kar'
-  },
-  {
-    first_name: 'Ivette',
-    last_name: 'Kael',
-    nickname: 'laeda'
-  }
-].freeze
-
-PLAYERS.each do |player|
-  Player.create(
-    first_name: player[:first_name],
-    last_name: player[:last_name],
-    nickname: player[:nickname]
-  )
+PLAYERS = %w[ikael fess kar laeda].freeze
+PLAYERS.each do |player_nickname|
+  Player.create(nickname: player_nickname)
 end
