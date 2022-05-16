@@ -33,4 +33,11 @@ RSpec.describe(Tournament) do
     subject.status = nil
     expect(subject).to be_invalid
   end
+
+  it 'is not valid with invalid status' do
+    subject.status = 'invalid'
+    false
+  rescue ArgumentError
+    true
+  end
 end
