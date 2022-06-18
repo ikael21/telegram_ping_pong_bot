@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 ruby '2.7.1'
 
 gem 'activerecord', '~> 5.0', '>= 5.0.0.1'
+gem 'stateful_enum'
 gem 'pg', '~> 1.1'
 gem 'rake', '~> 13.0', '>= 13.0.6'
 gem 'standalone_migrations', '~> 6.1'
